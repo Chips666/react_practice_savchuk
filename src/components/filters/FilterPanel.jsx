@@ -2,7 +2,7 @@ import React from 'react';
 import { UserFilterTabs } from './UserFilterTabs';
 import { SearchInput } from './SearchInput';
 import { CategoryFilter } from './CategoryFilter';
-import { ResetButton } from './ResetButon';
+import { ResetButton } from './ResetButton';
 
 export const FilterPanel = ({
   users,

@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState, useMemo } from 'react';
-import './App.scss';
-import { FilterPanel } from '../components/filters/FilterPanel';
 import { ProductsTable } from './components/table/ProductsTable';
+import { FilterPanel } from './components/filters/FilterPanel';
 import productsFromServer from './api/products';
 import users from './api/users';
 import categories from './api/categories';
+
+import './App.scss';
 
 export const App = () => {
   const enrichProducts = () => {
@@ -51,6 +51,7 @@ export const App = () => {
 
       return true;
     });
+    // сортування якщо вибрано ключ і напрямок
 
     if (sortConfig.key && sortConfig.direction) {
       filtered.sort((a, b) => {
@@ -80,7 +81,6 @@ export const App = () => {
     return filtered;
   }, [products, selectedUserId, searchQuery, selectedCategories, sortConfig]);
 
-  // Event handlers
   const handleUserSelect = userId => {
     setSelectedUserId(userId);
   };
